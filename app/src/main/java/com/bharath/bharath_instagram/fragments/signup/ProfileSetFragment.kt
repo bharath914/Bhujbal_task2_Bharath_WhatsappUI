@@ -33,7 +33,11 @@ class ProfileSetFragment : Fragment() {
         editText.setOnEditorActionListener(object : TextView.OnEditorActionListener {
             override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
                 if (actionId == EditorInfo.IME_ACTION_DONE || event?.action == KeyEvent.ACTION_DOWN) {
-                    findNavController().navigate(R.id.action_profileSetFragment_to_initializingFrag)
+                    if (editText.text.length in 6..12) {
+                        findNavController().navigate(R.id.action_profileSetFragment_to_initializingFrag)
+                    } else {
+                        showAlertDialog()
+                    }
                     return true
                 }
                 return false
