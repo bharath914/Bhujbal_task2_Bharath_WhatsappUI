@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".fragments.signup.VerifyPhoneNum">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/Vrp_Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/backbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow_back" />
+
+            <TextView
+                android:id="@+id/VrP_PhoneNumber_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Verify +917093219037"
+                android:textColor="@color/txt_Agree"
+                android:textSize="@dimen/_15sdp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/more_vert" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <ImageView
+            android:id="@+id/IV_phoneIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ellipse"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Vrp_Toolbar" />
+
+        <TextView
+            android:id="@+id/Otp_Desc_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Use your other phone to confirm moving WhatsApp to this one"
+            android:textAlignment="center"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@id/IV_phoneIcon" />
+
+        <TextView
+            android:id="@+id/Otp_Desc_Text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Open WhatsApp on your other phone to get the 6-digit code."
+            android:textAlignment="center"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@id/Otp_Desc_Text" />
+
+        <in.aabhasjindal.otptextview.OtpTextView
+            android:id="@+id/otp_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primarytxtColor"
+            app:bar_active_color="@color/Whatsappcolor"
+
+            app:bar_enabled="true"
+            app:bar_height="2dp"
+            app:height="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Otp_Desc_Text2"
+            app:length="6"
+
+            app:otp_text_size="@dimen/_18sdp"
+             />
+
+
+        <!--        <LinearLayout-->
+        <!--            android:id="@+id/OtpLayout"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:gravity="center"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/Otp_Desc_Text2">-->
+
+        <!--            <EditText-->
+        <!--                android:id="@+id/Otpcode1"-->
+        <!--                android:layout_width="35dp"-->
+        <!--                android:layout_height="50dp"-->
+        <!--                android:inputType="number"-->
+        <!--                android:maxLength="2"-->
+        <!--                android:textAlignment="center"-->
+
+        <!--                />-->
+
+        <!--            <EditText-->
+        <!--                android:id="@+id/Otpcode2"-->
+        <!--                android:layout_width="35dp"-->
+        <!--                android:layout_height="50dp"-->
+        <!--                android:inputType="number"-->
+        <!--                android:maxLength="2"-->
+        <!--                android:textAlignment="center"-->
+
+        <!--                />-->
+
+        <!--            <EditText-->
+        <!--                android:id="@+id/Otpcode3"-->
+        <!--                android:layout_width="35dp"-->
+        <!--                android:layout_height="50dp"-->
+        <!--                android:inputType="number"-->
+        <!--                android:maxLength="1"-->
+        <!--                android:textAlignment="center"-->
+
+        <!--                />-->
+
+        <!--            <EditText-->
+        <!--                android:id="@+id/Otpcode4"-->
+        <!--                android:layout_width="35dp"-->
+        <!--                android:layout_height="50dp"-->
+        <!--                android:inputType="number"-->
+        <!--                android:maxLength="1"-->
+        <!--                android:textAlignment="center"-->
+
+        <!--                />-->
+
+        <!--            <EditText-->
+        <!--                android:id="@+id/Otpcode5"-->
+        <!--                android:layout_width="35dp"-->
+        <!--                android:layout_height="50dp"-->
+        <!--                android:inputType="number"-->
+        <!--                android:maxLength="1"-->
+        <!--                android:textAlignment="center"-->
+
+        <!--                />-->
+
+        <!--            <EditText-->
+        <!--                android:id="@+id/Otpcode6"-->
+        <!--                android:layout_width="35dp"-->
+        <!--                android:layout_height="50dp"-->
+        <!--                android:inputType="number"-->
+        <!--                android:maxLength="1"-->
+        <!--                android:textAlignment="center"-->
+
+        <!--                />-->
+
+        <!--        </LinearLayout>-->
+
+
+        <TextView
+            android:id="@+id/Enter6DigitCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+
+            android:text="Enter 6-digit code"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/otp_view" />
+
+        <TextView
+            android:id="@+id/NeedHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Need help getting a code?"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Enter6DigitCode" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

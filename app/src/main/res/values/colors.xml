@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="SplashBackground">#0f1b21</color>
+    <color name="Whatsappcolor">#3be25e</color>
+    <color name="background">#FFFFFF</color>
+    <color name="primarytxtColor">#212121</color>
+    <color name="secondayTxtColor">#627882</color>
+    <color name="floatingAction">#00ab82</color>
+    <color name="whatsappdoodle_background">#A1FFFFFF</color>
+
+
+
+    <color name="txt_Agree">#00aa81</color>
+    <color name="agree_language_select_background">#f7f8fa</color>
+    <color name="mainStatusBarColor">#008268</color>
+
+    <color name="tabColor">#ffffff</color>
+    <color name="tabUnselctedTextColor">#65c0b4</color>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/transparent" />
+    <stroke
+        android:width="2dp"
+        android:color="@color/background" /> <!-- Border color for the circle -->
+    <corners android:radius="50dp" /> <!-- Adjust the radius to make it circular -->
+</shape>

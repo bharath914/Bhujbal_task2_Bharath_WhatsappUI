@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="RoundedFAB">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="android:editTextStyle">@style/CustomDisabledEditText</item>
+    </style>
+
+    <style name="CustomDisabledEditText" parent="Widget.AppCompat.EditText">
+        <!-- Override the text color for the disabled state -->
+        <item name="android:textColor">@color/primarytxtColor</item>
+        <item name="android:tint">@color/txt_Agree</item>
+        <item name="background">@drawable/edit_text_line</item>
+        <item name="boxStrokeColor">@color/txt_Agree</item>
+
+        <!-- Override other attributes as needed -->
+    </style>
+
+    <style name="MenuItemStyle">
+        <item name="android:background">@drawable/menu_background
+        </item> <!-- Reference the custom drawable -->
+        <!-- Add other style properties as needed -->
+    </style>
+</resources>

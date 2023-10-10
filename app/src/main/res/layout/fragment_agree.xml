@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".fragments.signup.AgreeFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_centerInParent="true">
+
+            <ImageView
+
+                android:id="@+id/Whatsapp_circularImageView"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:background="@drawable/circle_shape"
+                android:scaleType="centerCrop"
+                android:src="@drawable/whatsappdoodle_pngaawebsite"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/txt_Agree" />
+
+            <TextView
+                android:id="@+id/welcomeTowhats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/welcome_to_whatsapp"
+                android:textAlignment="center"
+                android:textColor="@color/primarytxtColor"
+                android:textSize="25sp"
+                app:layout_constraintTop_toBottomOf="@id/Whatsapp_circularImageView"
+
+                />
+
+            <TextView
+                android:id="@+id/termsandCond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="50dp"
+                android:text="Read our Privacy Policy. Tap &quot;Agree and continue &quot; to accept the Terms of service."
+                android:textAlignment="center"
+                android:textColor="@color/primarytxtColor"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/welcomeTowhats"
+
+                />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/showLangSheet"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:cardElevation="0dp"
+
+                app:cardBackgroundColor="@color/agree_language_select_background"
+                app:cardCornerRadius="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/termsandCond">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="5dp"
+                        android:src="@drawable/baseline_language_24"
+
+                        app:tint="@color/txt_Agree" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="5dp"
+                        android:text="English"
+                        android:textColor="@color/txt_Agree" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="5dp"
+                        android:foregroundGravity="center"
+                        android:src="@drawable/expand_more"
+                        app:tint="@color/txt_Agree" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/showLangSheet" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/Btn_AgreeAndContinue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:backgroundTint="@color/floatingAction"
+            android:text="Agree and continue"
+            android:textSize="15sp"
+            android:textColor="@color/background" />
+    </RelativeLayout>
+</FrameLayout>

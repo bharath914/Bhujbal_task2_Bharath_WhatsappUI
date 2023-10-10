@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sign_up_navgraph"
+    app:startDestination="@id/languageFragment">
+
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.bharath.bharath_instagram.fragments.signup.LanguageFragment"
+        android:label="fragment_language"
+        tools:layout="@layout/fragment_language" >
+        <action
+            android:id="@+id/action_languageFragment_to_agreeFragment"
+            app:destination="@id/agreeFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/agreeFragment"
+        android:name="com.bharath.bharath_instagram.fragments.signup.AgreeFragment"
+        android:label="fragment_agree"
+        tools:layout="@layout/fragment_agree" >
+        <action
+            android:id="@+id/action_agreeFragment_to_phoneNumber"
+            app:destination="@id/phoneNumber"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/phoneNumber"
+        android:name="com.bharath.bharath_instagram.fragments.signup.PhoneNumber"
+        android:label="fragment_phone_number"
+        tools:layout="@layout/fragment_phone_number" >
+        <action
+            android:id="@+id/action_phoneNumber_to_verifyPhoneNum"
+            app:destination="@id/verifyPhoneNum"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyPhoneNum"
+        android:name="com.bharath.bharath_instagram.fragments.signup.VerifyPhoneNum"
+        android:label="fragment_verify_phone_num"
+        tools:layout="@layout/fragment_verify_phone_num" >
+        <action
+            android:id="@+id/action_verifyPhoneNum_to_profileSetFragment"
+            app:destination="@id/profileSetFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileSetFragment"
+        android:name="com.bharath.bharath_instagram.fragments.signup.ProfileSetFragment"
+        android:label="fragment_profile_set"
+        tools:layout="@layout/fragment_profile_set" >
+        <action
+            android:id="@+id/action_profileSetFragment_to_initializingFrag"
+            app:destination="@id/initializingFrag"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/initializingFrag"
+        android:name="com.bharath.bharath_instagram.fragments.signup.InitializingFrag"
+        android:label="fragment_initializing"
+        tools:layout="@layout/fragment_initializing" />
+</navigation>

@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Bharath_WhatsApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- English -->
+    <string name="english">English</string>
+    <string name="english_native">English</string>
+
+    <!-- Hindi -->
+    <string name="hindi">Hindi</string>
+    <string name="hindi_native">हिन्दी</string>
+
+    <!-- Tamil -->
+    <string name="tamil">Tamil</string>
+    <string name="tamil_native">தமிழ்</string>
+
+    <!-- Telugu -->
+    <string name="telugu">Telugu</string>
+    <string name="telugu_native">తెలుగు</string>
+
+    <!-- Kannada -->
+    <string name="kannada">Kannada</string>
+    <string name="kannada_native">ಕನ್ನಡ</string>
+
+    <!-- Marathi -->
+    <string name="marathi">Marathi</string>
+    <string name="marathi_native">मराठी</string>
+
+    <!-- Gujarati -->
+    <string name="gujarati">Gujarati</string>
+    <string name="gujarati_native">ગુજરાતી</string>
+
+    <!-- Urdu -->
+    <string name="urdu">Urdu</string>
+    <string name="urdu_native">اردو</string>
+
+    <!-- Punjabi -->
+    <string name="punjabi">Punjabi</string>
+    <string name="punjabi_native">ਪੰਜਾਬੀ</string>
+    <string name="welcome_to_whatsapp">Welcome to WhatsApp</string>
+    <string name="log_out">Log Out</string>
+
+</resources>
