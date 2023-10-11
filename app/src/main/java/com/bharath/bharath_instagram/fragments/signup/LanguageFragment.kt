@@ -10,9 +10,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bharath.bharath_instagram.R
-import com.bharath.bharath_instagram.data.LanguageInfo
-import com.bharath.bharath_instagram.presentation.LanguageAdapter
-import com.bharath.bharath_instagram.presentation.RecyclerViewClickListener
+import com.bharath.bharath_instagram.data.local.LanguageInfo
+import com.bharath.bharath_instagram.presentation.adatper.LanguageAdapter
+import com.bharath.bharath_instagram.presentation.adatper.RecyclerViewClickListener
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class LanguageFragment : Fragment(), RecyclerViewClickListener {

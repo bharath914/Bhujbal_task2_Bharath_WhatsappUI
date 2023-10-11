@@ -8,7 +8,7 @@
     <color name="primarytxtColor">#E8EDF0</color>
     <color name="secondayTxtColor">#8197a1</color>
     <color name="whatsappdoodle_background">#AD0F1B23</color>
-
+    <color name="cardBackground">#394349</color>
     <color name="txt_Agree">#00aa81</color>
     <color name="agree_language_select_background">#15232a</color>
     <color name="mainStatusBarColor">#1b2c35</color>

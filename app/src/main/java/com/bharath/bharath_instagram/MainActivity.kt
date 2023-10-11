@@ -10,6 +10,7 @@ import android.widget.PopupMenu
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.bharath.bharath_instagram.fragments.main.callsFragment
 import com.bharath.bharath_instagram.fragments.main.chatsFragment
@@ -17,9 +18,12 @@ import com.bharath.bharath_instagram.fragments.main.communityFrag
 import com.bharath.bharath_instagram.fragments.main.updatesFragment
 import com.bharath.bharath_instagram.other.Cons
 import com.bharath.bharath_instagram.presentation.adatper.PagerAdapter
+import com.bharath.bharath_instagram.presentation.viewmodel.MainViewModel
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     lateinit var tabrow: TabLayout
@@ -40,10 +44,14 @@ class MainActivity : AppCompatActivity() {
         } else {
 
             val viewPager = findViewById<ViewPager2>(R.id.ViewPager)
+            val mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
+
+
+
             tabrow = findViewById(R.id.tabRow)
             val fragments = listOf<Fragment>(
                 communityFrag(),
-                chatsFragment(),
+                chatsFragment(mainViewModel),
                 updatesFragment(),
                 callsFragment()
             )

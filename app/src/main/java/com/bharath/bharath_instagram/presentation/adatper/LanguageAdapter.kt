@@ -1,4 +1,4 @@
-package com.bharath.bharath_instagram.presentation
+package com.bharath.bharath_instagram.presentation.adatper
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bharath.bharath_instagram.R
-import com.bharath.bharath_instagram.data.LanguageInfo
+import com.bharath.bharath_instagram.data.local.LanguageInfo
 import com.google.android.material.radiobutton.MaterialRadioButton
 
 class LanguageAdapter(

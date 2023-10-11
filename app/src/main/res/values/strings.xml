@@ -4,6 +4,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
+    <string name="date_place_holder">Date: %1$s</string>
+    <string name="qty_place_holder">Qty: %1$s</string>
+    <string name="price_place_holder">₹ %1$s</string>
+    <string name="address_place_holder">Address : %1$s</string>
     <!-- English -->
     <string name="english">English</string>
     <string name="english_native">English</string>
