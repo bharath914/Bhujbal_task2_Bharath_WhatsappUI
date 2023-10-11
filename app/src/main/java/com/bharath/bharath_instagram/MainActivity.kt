@@ -1,7 +1,9 @@
 package com.bharath.bharath_instagram
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
@@ -12,9 +14,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
+import com.bharath.bharath_instagram.fragments.main.ChatsFragment
+import com.bharath.bharath_instagram.fragments.main.CommunityFrag
 import com.bharath.bharath_instagram.fragments.main.callsFragment
-import com.bharath.bharath_instagram.fragments.main.chatsFragment
-import com.bharath.bharath_instagram.fragments.main.communityFrag
 import com.bharath.bharath_instagram.fragments.main.updatesFragment
 import com.bharath.bharath_instagram.other.Cons
 import com.bharath.bharath_instagram.presentation.adatper.PagerAdapter
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         sp = getSharedPreferences(Cons.sharedPref, MODE_PRIVATE)
 
+        val mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
         setContentView(R.layout.activity_main)
         if (!sp.getBoolean(Cons.isUserSignedIn, false)) {
@@ -43,36 +46,57 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         } else {
 
-            val viewPager = findViewById<ViewPager2>(R.id.ViewPager)
-            val mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
+            if (!isNetworkConnected(this)) {
+                showNetworkBOx()
+            } else {
+
+                val viewPager = findViewById<ViewPager2>(R.id.ViewPager)
 
 
 
-            tabrow = findViewById(R.id.tabRow)
-            val fragments = listOf<Fragment>(
-                communityFrag(),
-                chatsFragment(mainViewModel),
-                updatesFragment(),
-                callsFragment()
-            )
-            signOut = findViewById(R.id.signOutButton)
-            val adapter = PagerAdapter(this, fragments)
-            viewPager.adapter = adapter
-            TabLayoutMediator(tabrow, viewPager) { tab, pos ->
-                when (pos) {
-                    0 -> tab.icon = getDrawable(R.drawable.groups_icon)
-                    1 -> tab.text = "Chats"
-                    2 -> tab.text = "Updates"
-                    3 -> tab.text = "Calls"
+                tabrow = findViewById(R.id.tabRow)
+                val fragments = listOf<Fragment>(
+                    CommunityFrag(mainViewModel),
+                    ChatsFragment(mainViewModel),
+                    updatesFragment(),
+                    callsFragment()
+                )
+                signOut = findViewById(R.id.signOutButton)
+                val adapter = PagerAdapter(this, fragments)
+                viewPager.adapter = adapter
+                TabLayoutMediator(tabrow, viewPager) { tab, pos ->
+                    when (pos) {
+                        0 -> tab.icon = getDrawable(R.drawable.groups_icon)
+                        1 -> tab.text = "Chats"
+                        2 -> tab.text = "Updates"
+                        3 -> tab.text = "Calls"
+                    }
+
+                }.attach()
+
+                signOut.setOnClickListener {
+                    showPopupMenu(it)
                 }
 
-            }.attach()
-
-            signOut.setOnClickListener {
-                showPopupMenu(it)
             }
+        }
+    }
+
+    private fun showNetworkBOx() {
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        builder.setTitle("Not Connected")
+        builder.setMessage("Please Connect to Internet")
+        builder.setPositiveButton(
+            "Check Again"
+        ) { dialog, which ->
+            Networkrestart()
+        }
+        builder.setNegativeButton("Close App") { dialog, which ->
+            finishAffinity()
 
         }
+        builder.create()
+        builder.show()
     }
 
     override fun onBackPressed() {
@@ -122,5 +146,20 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
 
 
+    }
+
+    private fun Networkrestart() {
+        val intent = Intent(this, MainActivity::class.java)
+
+
+        startActivity(intent)
+
+
+    }
+
+    fun isNetworkConnected(context: Context): Boolean {
+        val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetwork = cm.activeNetworkInfo
+        return activeNetwork != null && activeNetwork.isConnectedOrConnecting
     }
 }

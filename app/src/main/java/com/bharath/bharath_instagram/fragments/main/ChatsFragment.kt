@@ -3,31 +3,25 @@ package com.bharath.bharath_instagram.fragments.main
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.Orientation
 import com.bharath.bharath_instagram.R
 import com.bharath.bharath_instagram.presentation.adatper.ProductListAdatper
 import com.bharath.bharath_instagram.presentation.viewmodel.MainViewModel
 import kotlinx.coroutines.launch
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [chatsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-
-class chatsFragment(val mainViewModel: MainViewModel) : Fragment() {
+class ChatsFragment(private val mainViewModel: MainViewModel) : Fragment() {
 
     lateinit var recyclerView: RecyclerView
+    lateinit var progress: ProgressBar
+    lateinit var totalOrders: TextView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -36,19 +30,37 @@ class chatsFragment(val mainViewModel: MainViewModel) : Fragment() {
         val v = inflater.inflate(R.layout.fragment_chats, container, false)
 
 
+        progress = v.findViewById(R.id.ChatsProgressIndicator)
         recyclerView = v.findViewById(R.id.ChatsRecycler)
 
+        totalOrders = v.findViewById(R.id.TotalOrders)
 
         val adap = ProductListAdatper(requireContext())
         recyclerView.adapter = adap
         recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.setItemViewCacheSize(8)
+        recyclerView.setHasFixedSize(true)
 
+        mainViewModel.viewModelScope.launch {
+            mainViewModel.productList.collect {
+                if (it.isLoading) {
+
+                    progress.visibility = VISIBLE
+
+                } else {
+
+                    progress.visibility = GONE
+                }
+            }
+        }
 
         mainViewModel.viewModelScope.launch {
 //
+
             mainViewModel.allOrders.collect {
 
                 adap.submitList(it)
+                totalOrders.text = String.format(getString(R.string.total_place_holder), it.size)
             }
 //
         }

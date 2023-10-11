@@ -1,6 +1,5 @@
 package com.bharath.bharath_instagram.presentation.viewmodel
 
-import android.content.Context
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,21 +10,19 @@ import com.bharath.bharath_instagram.data.resource.Resource
 import com.bharath.bharath_instagram.presentation.states.GetProductListState
 import com.bharath.bharath_instagram.usecases.GetProductListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
+
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val getProductListUseCase: GetProductListUseCase,
-    @ApplicationContext val context: Context,
-) : ViewModel() {
 
-    private val _groupData = MutableStateFlow(emptyList<GroupData>())
-    val groupData: StateFlow<List<GroupData>> = _groupData
+    ) : ViewModel() {
+
 
     private val _allOrders = MutableStateFlow(emptyList<OrderDetail>())
     val allOrders: StateFlow<List<OrderDetail>> = _allOrders
@@ -54,7 +51,7 @@ class MainViewModel @Inject constructor(
 
                         }
                     }
-                    _groupData.tryEmit(G_list)
+
                     val all_Orders = mutableListOf<OrderDetail>()
                     G_list.forEachIndexed { index, groupData ->
 

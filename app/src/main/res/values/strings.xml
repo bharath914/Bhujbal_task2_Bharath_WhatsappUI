@@ -8,6 +8,8 @@
     <string name="qty_place_holder">Qty: %1$s</string>
     <string name="price_place_holder">₹ %1$s</string>
     <string name="address_place_holder">Address : %1$s</string>
+    <string name="count_placeHolder">Count : %1$s</string>
+    <string name="total_place_holder">Total : %1$s Orders</string>
     <!-- English -->
     <string name="english">English</string>
     <string name="english_native">English</string>
@@ -45,5 +47,6 @@
     <string name="punjabi_native">ਪੰਜਾਬੀ</string>
     <string name="welcome_to_whatsapp">Welcome to WhatsApp</string>
     <string name="log_out">Log Out</string>
+
 
 </resources>

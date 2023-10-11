@@ -45,9 +45,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppins"
+                android:maxLines="1"
                 android:text="Amul Full Cream Milk"
                 android:textColor="@color/primarytxtColor"
-                android:maxLines="1"
                 android:textSize="@dimen/_17sdp" />
 
             <LinearLayout
@@ -59,23 +59,25 @@
                     android:id="@+id/DateOfTheProduct"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.6"
+                    android:layout_weight="0.7"
                     android:ellipsize="marquee"
+                    android:fontFamily="@font/poppins_light"
                     android:maxLines="1"
                     android:text="@string/date_place_holder"
                     android:textColor="@color/primarytxtColor"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_12sdp" />
 
                 <TextView
                     android:id="@+id/Quantity"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.4"
+                    android:layout_weight="0.3"
                     android:ellipsize="marquee"
+                    android:fontFamily="@font/poppins_light"
                     android:maxLines="1"
                     android:text="@string/qty_place_holder"
                     android:textColor="@color/primarytxtColor"
-                    android:textSize="@dimen/_14sdp"
+                    android:textSize="@dimen/_13sdp"
 
                     />
             </LinearLayout>
@@ -89,32 +91,50 @@
                     android:id="@+id/PriceOfTheProduct"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.6"
+                    android:layout_weight="0.5"
                     android:text="@string/price_place_holder"
                     android:textColor="@color/primarytxtColor"
-                    android:textSize="@dimen/_18sdp" />
+                    android:textSize="@dimen/_17sdp" />
 
-                <TextView
-                    android:id="@+id/OrderStatus"
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.4"
-                    android:maxLines="1"
-                    android:text="Delivered"
-                    android:textColor="@color/primarytxtColor"
-                    android:textSize="@dimen/_17sdp"
+                    android:layout_weight="0.5">
 
-                    />
+                    <ImageView
+                        android:id="@+id/OrderStatusIcon"
+                        android:layout_width="@dimen/_19sdp"
+                        android:layout_height="@dimen/_19sdp"
+                        android:layout_gravity="center_vertical"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/icons8_process_50" />
+
+                    <TextView
+                        android:id="@+id/OrderStatus"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:maxLines="1"
+                        android:text="Delivered"
+                        android:textAlignment="center"
+                        android:textColor="@color/secondayTxtColor"
+                        android:textSize="@dimen/_16sdp"
+
+                        />
+                </LinearLayout>
             </LinearLayout>
 
             <TextView
                 android:id="@+id/Address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center_vertical"
                 android:maxLines="1"
                 android:text="@string/address_place_holder"
                 android:textColor="@color/primarytxtColor"
-                android:textSize="@dimen/_15sdp" />
+                android:textSize="@dimen/_13sdp" />
 
         </LinearLayout>
     </LinearLayout>
