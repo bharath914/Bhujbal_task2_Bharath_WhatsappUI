@@ -5,3 +5,4 @@ data class ProductDetails(
     val message: String="",
     val status: String =""
 )
+

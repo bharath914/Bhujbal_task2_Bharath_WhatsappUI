@@ -66,7 +66,7 @@ class MainViewModel @Inject constructor(
                     }
                     _productList.tryEmit(
                         GetProductListState(
-                            data = result.data ?: ProductDetails()
+                            details = result.data ?: ProductDetails()
                         )
                     )
                 }

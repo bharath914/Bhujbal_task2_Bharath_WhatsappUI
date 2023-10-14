@@ -29,7 +29,7 @@
                 android:paddingStart="@dimen/_10sdp"
                 android:text="All Orders"
                 android:textAlignment="textStart"
-                android:textColor="@color/Whatsappcolor"
+                android:textColor="@color/primarytxtColor"
 
                 android:textSize="@dimen/_19sdp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
                 android:paddingEnd="@dimen/_12sdp"
                 android:text="@string/total_place_holder"
                 android:textAlignment="textEnd"
-                android:textColor="@color/Whatsappcolor"
+                android:textColor="@color/primarytxtColor"
                 android:textSize="@dimen/_16sdp" />
         </LinearLayout>
 

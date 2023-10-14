@@ -6,8 +6,8 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -24,7 +24,7 @@ class CommunityFrag(
 
     lateinit var recylerView: RecyclerView
     lateinit var progress: LinearProgressIndicator
-
+    lateinit var totalGroups: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +36,7 @@ class CommunityFrag(
 
         recylerView = v.findViewById(R.id.REcyclerViewCommunity)
         progress = v.findViewById(R.id.CommunityProgressIndicator)
+        totalGroups = v.findViewById(R.id.TotalGroups)
         recylerView.layoutManager = LinearLayoutManager(requireContext())
         val adap = GroupsAdapter(requireContext())
 
@@ -52,7 +53,9 @@ class CommunityFrag(
                     progress.hide()
                     progress.visibility = GONE
 
-                    adap.submitList(it.data.data)
+                    adap.submitList(it.details.data)
+                    totalGroups.text =
+                        String.format(getString(R.string.total_place_holder), it.details.data.size)
                 }
 
             }

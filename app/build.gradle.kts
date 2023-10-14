@@ -55,7 +55,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.2")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
@@ -64,8 +64,6 @@ dependencies {
     kapt("com.google.dagger:dagger-compiler:2.48") // Dagger compiler
     kapt("com.google.dagger:hilt-compiler:2.48")   // Hilt compiler
 
-    //Glide
-    implementation("com.github.bumptech.glide:glide:4.16.0")
 
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")

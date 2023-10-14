@@ -10,19 +10,45 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/misc_groups"
+        <LinearLayout
+            android:id="@+id/Misc_ALlGroups"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="15dp"
-            android:fontFamily="@font/archivo_semibold"
-            android:text="Groups"
-            android:textAlignment="textStart"
-
-            android:textColor="@color/Whatsappcolor"
-            android:textSize="@dimen/_19sdp"
+            android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|start"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="0.7"
+                android:fontFamily="@font/archivo_semibold"
+                android:paddingStart="@dimen/_10sdp"
+                android:text="Groups"
+                android:textAlignment="textStart"
+                android:textColor="@color/primarytxtColor"
+
+                android:textSize="@dimen/_19sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/TotalGroups"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_weight="0.3"
+                android:paddingEnd="@dimen/_12sdp"
+                android:text="@string/total_place_holder"
+                android:textAlignment="textEnd"
+                android:textColor="@color/primarytxtColor"
+                android:textSize="@dimen/_16sdp" />
+        </LinearLayout>
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/REcyclerViewCommunity"
@@ -31,18 +57,17 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/misc_groups"
+            app:layout_constraintTop_toBottomOf="@id/Misc_ALlGroups"
             tools:listitem="@layout/group_list_item" />
 
         <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/CommunityProgressIndicator"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/CommunityProgressIndicator"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
