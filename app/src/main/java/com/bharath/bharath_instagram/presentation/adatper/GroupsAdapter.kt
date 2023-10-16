@@ -17,6 +17,7 @@ import com.bharath.bharath_instagram.R
 import com.bharath.bharath_instagram.data.entity.product.Data
 import com.bharath.bharath_instagram.presentation.adatper.expanded.ExpandedGroupAdapter
 
+
 class GroupsAdapter(val context: Context) :
     ListAdapter<Data, GroupsAdapter.GroupViewHolder>(ItemDiffUtilCallback()) {
     inner class GroupViewHolder(itemView: View) : ViewHolder(itemView) {
@@ -34,6 +35,11 @@ class GroupsAdapter(val context: Context) :
                 String.format(context.getString(R.string.count_placeHolder), data.count)
 
         }
+
+
+
+
+
     }
 
     private class ItemDiffUtilCallback : DiffUtil.ItemCallback<Data>() {
@@ -69,6 +75,7 @@ class GroupsAdapter(val context: Context) :
                 holder.expandedREcyclerview.adapter = adap
                 adap.submitList(currentItem.groupData)
                 holder.expandedLayout.visibility = View.VISIBLE
+
             } else {
 
                 holder.expandedLayout.visibility = View.GONE

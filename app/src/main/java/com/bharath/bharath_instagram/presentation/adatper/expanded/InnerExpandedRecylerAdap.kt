@@ -21,7 +21,8 @@ class InnerExpandedRecylerAdap(
         val productQuantity: TextView = itemView.findViewById(R.id.itemQuantity)
         fun bind(orderDetail: OrderDetail) {
             productName.text = orderDetail.product_name
-            productQuantity.text = orderDetail.product_qty
+            productQuantity.text =
+                String.format(context.getString(R.string.qty_ml_placeHolder), orderDetail.product_qty)
         }
     }
 

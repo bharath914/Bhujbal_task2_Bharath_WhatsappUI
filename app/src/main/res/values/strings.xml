@@ -5,7 +5,10 @@
 
 
     <string name="date_place_holder">Date: %1$s</string>
+    <string name="name_placeHolder">Name : %1$s</string>
     <string name="qty_place_holder">Qty: %1$s</string>
+
+    <string name="qty_ml_placeHolder">Qty: %1$s ml</string>
     <string name="price_place_holder">₹ %1$s</string>
     <string name="address_place_holder">Address : %1$s</string>
     <string name="count_placeHolder">Count : %1$s</string>

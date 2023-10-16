@@ -43,7 +43,8 @@ class ExpandedGroupAdapter(
 
     override fun onBindViewHolder(holder: InnerGroupViewHolder, position: Int) {
         val currentItem = getItem(position)
-        holder.userName.text = currentItem.name
+        holder.userName.text =
+            String.format(context.getString(R.string.name_placeHolder), currentItem.name)
         val adap = InnerExpandedRecylerAdap(context)
         holder.recycler.layoutManager = LinearLayoutManager(context)
         holder.recycler.adapter = adap
